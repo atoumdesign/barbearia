@@ -3,8 +3,14 @@ node_js: "stable"
 
 sudo: required
 
-notifications:
-  slack: compasso-teamunipampa:CDcSiVTRXCUTsGYrNujZSgdl
+addons:
+  sonarcloud:
+    organization: "atoumdesign"
+    token: 2597339868dc3341780bd5859ea3a0ec29ec8f3c
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
 
 branches:
   only:
